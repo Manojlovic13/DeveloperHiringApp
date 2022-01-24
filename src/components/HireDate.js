@@ -20,15 +20,17 @@ class HireDate extends React.Component {
     }
     render() {
         return (
-            <div>
-                <form onSubmit={this.handleSubmit}>
-                    <label>From:</label>
-                    <input type="date" name="from" onChange={this.onChange} /><br></br>
-
-                    <label>To:</label>
-                    <input type="date" name="to" onChange={this.onChange} /><br></br>
-
-                    <button>Hire</button>
+            <div className="hire-dates">
+                <form onSubmit={this.handleSubmit} className="hire-form">
+                    <div>
+                        <label>From: </label>
+                        <input type="date" name="from" onChange={this.onChange} />
+                    </div>
+                    <div>
+                        <label>To: </label>
+                        <input type="date" name="to" onChange={this.onChange} />
+                    </div>
+                    <button className="btn btn-success">Hire</button>
                 </form>
                 {this.state.message}
             </div>

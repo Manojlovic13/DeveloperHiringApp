@@ -1,0 +1,171 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.4;
+    color: #444;
+    background: #fff;
+    height: 100vh;
+}
+
+.list-container {
+    padding: 10px;
+    width: 70%;
+    margin: auto;
+}
+
+#add-developer-form {
+    display: none;
+}
+
+.list {
+    max-height: 520px;
+    overflow-y: scroll;
+    padding: 0 30px;
+}
+
+.developer-container {
+    list-style-type: none;
+    display: flex;
+    margin: 20px 0;
+}
+
+.profile-picture {
+    text-align: center;
+}
+
+.profile-picture img {
+    border-radius: 500px;
+    max-width: 100px;
+    width: 100%;
+}
+
+.developer-options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn-delete {
+    background-color: #8B0000;
+    color: white;
+}
+
+.btn-update {
+    background-color: #DAA520;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    padding: 5px 0;
+}
+
+.developer-left {
+    padding: 10px;
+    min-width: 290px;
+}
+
+.developer-right{
+    padding: 25px 10px;
+    width: calc(100% - 290px);
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.title {
+    text-align: center;
+}
+
+.btn {
+    width: 160px;
+    height: 32px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.btn:hover {
+    transform: translateX(-3px) translateY(-3px);
+    box-shadow: 4px 4px 4px grey;
+    cursor: pointer;
+}
+
+.btn-menu {
+    background-color: #483D8B;
+    color: white;
+    margin: 10px;
+}
+
+.btn-success {
+    background-color: #228B22;
+    color: white;
+}
+
+.hire-dates {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.hire-form {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+    align-items: center;
+}
+
+.add-and-update-form {
+    width: 300px;
+    margin: auto;
+    padding: 14px 22px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin: 5px 0;
+}
+
+.form-group button {
+    display: block;
+    margin: auto;
+}
+
+.card {
+    background-color: #F5F5DC;
+    border-radius: 30px;
+    box-shadow: 6px 6px 10px grey;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.wrap-text {
+    inline-size: 250px;
+    overflow-wrap: break-word;
+}
+
+.back-img {
+    width: 40px;
+    display: block;
+    margin: auto;
+}
+
+.back-img:hover {
+    transform: scale(1.2);
+}

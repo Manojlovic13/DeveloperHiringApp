@@ -102,7 +102,7 @@ class App extends React.Component {
         const hireFrom = new Date(fromArr[0], fromArr[1] - 1, fromArr[2])
         const hireTo = new Date(toArr[0], toArr[1] - 1, toArr[2])
 
-        if (hireFrom > hireTo || hireFrom < new Date()) {
+        if (hireFrom > hireTo || hireFrom < new Date() || from === "" || to === "") {
             return false
         }
 
@@ -112,24 +112,26 @@ class App extends React.Component {
         if (!this.validateDates(from, to)) {
             return "Please enter valid dates!"
         }
+        let message = "Please check at least one developer!"
         this.setState({
             developers: [...this.state.developers.map(developer => {
                 if (developer.checked === true) {
                     developer.checked = false;
                     developer.hiredFrom = from;
                     developer.hiredTo = to;
+                    message = "Developer/s hired!"
                 }
                 return developer;
             })]
         })
 
-        return "Developer/s hired!"
+        return message
     }
     findDeveloper = id => {
         let dev = {}
 
         this.state.developers.forEach(developer => {
-            if (developer.id === id){
+            if (developer.id === id) {
                 dev = developer
             }
         })
@@ -139,8 +141,8 @@ class App extends React.Component {
     updateDeveloper = developer => {
         this.setState(prevState => ({
             developers: prevState.developers.map(dev => {
-                if (dev.id === developer.id){
-                   return dev = developer
+                if (dev.id === developer.id) {
+                    return dev = developer
                 }
                 return dev
             })
@@ -149,17 +151,19 @@ class App extends React.Component {
     render() {
         return (
             <Router>
-                <div>
+                <div className="app">
                     <Header />
-                    <Routes>
-                        <Route exact path="/" element={<> <DeveloperList developers={this.state.developers}
-                            handleChangeProps={this.handleChange}
-                            deleteDeveloperProps={this.deleteDeveloper}
-                            hireDevelopersProps={this.hireDevelopers} />
-                            <AddDeveloper addDeveloperProps={this.addDeveloper} /> </>}
-                        />
-                        <Route path="/update/:id" element={<UpdateDeveloper findDeveloperProps={this.findDeveloper} updateDeveloperProps={this.updateDeveloper} />} />
-                    </Routes>
+                    <div className="container">
+                        <Routes>
+                            <Route exact path="/" element={<> <DeveloperList developers={this.state.developers}
+                                handleChangeProps={this.handleChange}
+                                deleteDeveloperProps={this.deleteDeveloper}
+                                hireDevelopersProps={this.hireDevelopers} />
+                                <AddDeveloper addDeveloperProps={this.addDeveloper} /> </>}
+                            />
+                            <Route path="/update/:id" element={<UpdateDeveloper findDeveloperProps={this.findDeveloper} updateDeveloperProps={this.updateDeveloper} />} />
+                        </Routes>
+                    </div>
                 </div>
             </Router>
         )

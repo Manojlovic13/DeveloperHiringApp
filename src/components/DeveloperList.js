@@ -6,19 +6,21 @@ import HireDate from "./HireDate"
 class DeveloperList extends React.Component {
     render() {
         return (
-            <div>
-                <ul>
-                    {
-                        this.props.developers.map(developer => (
-                            <Developer key={developer.id}
-                                developer={developer}
-                                deleteDeveloperProps={this.props.deleteDeveloperProps}
-                                handleChangeProps={this.props.handleChangeProps}
-                            />
-                        ))
-                    }
+            <div className="list-container" id="list-container">
+                <div className="list">
+                    <ul>
+                        {
+                            this.props.developers.map(developer => (
+                                <Developer key={developer.id}
+                                    developer={developer}
+                                    deleteDeveloperProps={this.props.deleteDeveloperProps}
+                                    handleChangeProps={this.props.handleChangeProps}
+                                />
+                            ))
+                        }
 
-                </ul>
+                    </ul>
+                </div>
                 <HireDate hireDevelopersProps={this.props.hireDevelopersProps} />
             </div>
         )
