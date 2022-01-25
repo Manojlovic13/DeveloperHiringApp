@@ -22,16 +22,20 @@ const state = {
 
 
 
-export default function (props) {
+export default function UpdateDeveloper(props) {
     const { id } = useParams()
     const developer = props.findDeveloperProps(id)
     const [state, setState] = useState(developer)
+    const [message, setMessage] = useState("")
 
     const handleSubmit = e => {
         e.preventDefault()
         if (state.name.trim() && state.location.trim()) {
+            setMessage("Developer updated successfully!")
             props.updateDeveloperProps(state)
-        }
+        } else {
+			setMessage("Please fill in all the fields!")
+		}
     }
 
     const onChange = e => {
@@ -52,6 +56,7 @@ export default function (props) {
             <h1 className="title">Update {developer.name}'s profile</h1>
 
             <form onSubmit={handleSubmit} className="add-and-update-form card">
+				<span>{message}</span>
                 <div className="form-group">
                     <label>Name:</label>
                     <input type="text" name="name" defaultValue={state.name} onChange={onChange} required />
@@ -124,6 +129,7 @@ export default function (props) {
                 <div className="form-group">
                     <button className="btn btn-success">Submit</button>
                 </div>
+				
             </form>
         </div>
     )

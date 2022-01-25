@@ -51,6 +51,10 @@ class AddDeveloper extends React.Component {
             this.props.addDeveloperProps(developer)
             document.getElementById("add-developer-form").reset()
             this.setState(initialState)
+
+            this.setState({
+                ...this.state, inputError: "Developer added successfully!"
+            })
         } else {
             this.setState({
                 ...this.state, inputError: "Please fill in all the fields!",
@@ -131,7 +135,7 @@ class AddDeveloper extends React.Component {
                 <div className="form-group">
                     <button className="btn btn-success">Submit</button>
                 </div>
-                <div style={{ fontSize: 12, color: 'red' }}>
+                <div className="form-group">
                     {this.state.inputError}
                 </div>
             </form>

@@ -3,16 +3,6 @@ import { Link } from "react-router-dom"
 
 
 class Developer extends React.Component {
-    /*
-                Email: {this.props.developer.email}
-                Phone: {this.props.developer.phone}
-                Location: {this.props.developer.location}
-                Price per hour: {this.props.developer.pricePerHour}
-                Technology: {this.props.developer.technology}
-                Years of expiriance: {this.props.developer.yearsOfExp}
-                Native language: {this.props.developer.nativeLang}
-
-    */
     hideMenu() {
         document.getElementById("menu").style.display = "none";
     }
@@ -55,8 +45,8 @@ class Developer extends React.Component {
                             <p>Price per hour: ${this.props.developer.pricePerHour}</p>
                             <p>Technology: {this.props.developer.technology}</p>
                             <p>Years of expiriance: {this.props.developer.yearsOfExp}</p>
-                            <p><a href={this.props.developer.linkedInLink}>LinkedIn</a></p>
-                            <p class="wrap-text">Description: {this.props.developer.description}</p>
+                            <p>{this.props.developer.linkedInLink ? <a href={this.props.developer.linkedInLink}>LinkedIn</a> : ""}</p>
+                            {this.props.developer.description ? <p className="wrap-text">Description: {this.props.developer.description}</p> : ""}
                         </div>
                     </div>
                 </li>

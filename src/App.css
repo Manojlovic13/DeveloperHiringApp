@@ -7,8 +7,10 @@
 body {
     font-family: "Segoe UI", Arial, sans-serif;
     line-height: 1.4;
-    color: #444;
-    background: #fff;
+    color: #F7EBFF;
+	background-color: #F7EBFF;
+    background-image: url(wave.svg);
+	background-repeat: no-repeat;
     height: 100vh;
 }
 
@@ -53,16 +55,24 @@ body {
 }
 
 .btn-delete {
-    background-color: #8B0000;
+    background-color: #483D8B/*#8B0000*/;
     color: white;
 }
 
+.btn-delete:hover {
+	background-color: #E0597E;
+}
+
 .btn-update {
-    background-color: #DAA520;
+    background-color: #483D8B;
     color: white;
     text-decoration: none;
     text-align: center;
     padding: 5px 0;
+}
+
+.btn-update:hover {
+	background-color: #00AEB8;
 }
 
 .developer-left {
@@ -97,7 +107,7 @@ body {
 }
 
 .btn:hover {
-    transform: translateX(-3px) translateY(-3px);
+    transform: translateX(-3px) translateY(3px);
     box-shadow: 4px 4px 4px grey;
     cursor: pointer;
 }
@@ -109,7 +119,7 @@ body {
 }
 
 .btn-success {
-    background-color: #228B22;
+    background-color: #483D8B;
     color: white;
 }
 
@@ -146,9 +156,9 @@ body {
 }
 
 .card {
-    background-color: #F5F5DC;
+    background-color: #6E5AD1;
     border-radius: 30px;
-    box-shadow: 6px 6px 10px grey;
+    box-shadow: 3px 3px 7px grey;
 }
 
 textarea {
@@ -168,4 +178,8 @@ textarea {
 
 .back-img:hover {
     transform: scale(1.2);
+}
+
+.outside-label {
+	color: black;
 }

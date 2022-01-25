@@ -23,16 +23,16 @@ class HireDate extends React.Component {
             <div className="hire-dates">
                 <form onSubmit={this.handleSubmit} className="hire-form">
                     <div>
-                        <label>From: </label>
+                        <label className="outside-label">From: </label>
                         <input type="date" name="from" onChange={this.onChange} />
                     </div>
                     <div>
-                        <label>To: </label>
+                        <label className="outside-label">To: </label>
                         <input type="date" name="to" onChange={this.onChange} />
                     </div>
                     <button className="btn btn-success">Hire</button>
                 </form>
-                {this.state.message}
+                <span className="outside-label">{this.state.message}</span>
             </div>
         )
     }
