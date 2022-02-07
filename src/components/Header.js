@@ -13,7 +13,7 @@ function Header(){
 
     return (
         <header className="header">
-            <h1 className="title">Prime Hiring</h1>
+            <h1 className="title">Developer Hiring App</h1>
             <div className="menu" id="menu">
                 <button type="button" onClick={showDevelopers} className="btn btn-menu">Browse developers</button>
                 <button type="button" onClick={showAddDeveloper} className="btn btn-menu">Add developer</button>
